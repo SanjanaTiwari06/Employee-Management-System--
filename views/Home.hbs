@@ -1,0 +1,42 @@
+{{>header}}
+
+{{>Navbar}}
+
+<div class="container">
+    <h5>Employee Data</h5>
+    <div class="table-responsive">
+        <table class="table display" id="myTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Designation</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+             <tbody>
+                {{#each data}}
+                <tr>
+                    <th>{{_id}}</th>
+                    <th>{{name}}</th>
+                    <th>{{email}}</th>
+                    <th>{{designation}}</th>
+                    <th>{{phone}}</th>
+                    <th>{{city}}</th>
+                    <th>{{state}}</th>
+                    <th><a href="/delete/{{_id}}"><i class="bi bi-trash text-danger fs-5"></i></a></th>
+                    <th><a href="/edit/{{_id}}"><i class="bi bi-pencil text-primary fs-5"></i></a></th>
+                    
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{{>Footer}}
